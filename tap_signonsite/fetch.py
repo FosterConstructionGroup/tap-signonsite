@@ -78,7 +78,7 @@ def get_all_sites(schemas, state, mdata):
                             with singer.Transformer() as transformer:
                                 transformed = transformer.transform(
                                     company,
-                                    schemas["users"],
+                                    schemas["companies"],
                                     metadata=metadata.to_map(mdata),
                                 )
                             singer.write_record(
