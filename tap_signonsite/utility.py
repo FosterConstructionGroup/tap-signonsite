@@ -25,7 +25,7 @@ def get_page(source, url, start=0, offset=0):
         session.headers.update()
         resp = session.request(
             method="get",
-            url=f"{baseUrl}{url}?offset={offset}&limit={per_page}&filter_start_time={start}",
+            url=f"{baseUrl}{url}?offset={offset}&limit={per_page}",
         )
         if resp.status_code == 401:
             raise AuthException(resp.text)
